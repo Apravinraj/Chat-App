@@ -12,7 +12,10 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("/chat")
-                .setAllowedOrigins("pravin-chat-app.up.railway.app")
+                .setAllowedOrigins(
+                        "http://localhost:8080",
+                        "https://pravin-chat-app.up.railway.app"
+                )
                 .withSockJS();
     }
 
